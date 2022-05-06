@@ -1,9 +1,10 @@
 import React from 'react';
+import InventorySection from './InventorySection/InventorySection';
 
 const Home = () => {
     return (
         <div>
-            <h1>This is home</h1>
+            <InventorySection></InventorySection>
         </div>
     );
 };
