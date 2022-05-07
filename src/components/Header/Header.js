@@ -16,7 +16,7 @@ const Header = () => {
         <span>
           <button onClick={() => signOut(auth)}>Sign out</button>
           <Link to="/manageInventory">Manage item</Link>
-          {/* <Link to ="/additem">Add item</Link> */}
+          <Link to ="/addNewItem">Add item</Link>
           <Link to ="/myitem">My item</Link>
         </span>
       ) : (
