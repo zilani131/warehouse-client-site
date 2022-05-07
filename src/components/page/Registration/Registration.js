@@ -1,5 +1,5 @@
 import React from "react";
-import {  useAuthState, useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import {  useAuthState, useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import {useNavigate,useLocation, Link} from "react-router-dom"
 const Registration = () => {
@@ -8,6 +8,7 @@ const Registration = () => {
         let navigate = useNavigate();
         const [user]=useAuthState(auth)
         const [updateProfile] = useUpdateProfile(auth);
+        const [sendEmailVerification] = useSendEmailVerification(auth);
           const [
               createUserWithEmailAndPassword
           
@@ -31,6 +32,7 @@ const Registration = () => {
               await createUserWithEmailAndPassword(email,pw)
               // must be update profile after create user 
               await updateProfile({displayName:name})
+              await sendEmailVerification()
               // if(user){
               //   navigate(from, { replace: true });
               // }

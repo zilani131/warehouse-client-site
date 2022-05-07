@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import {
   useAuthState,
+ 
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
@@ -20,6 +21,8 @@ const Login = () => {
   const [signInWithEmailAndPassword, loading, error] =useSignInWithEmailAndPassword(auth);
     //   password reset email
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+    // email verification
+    
     const emailRef = useRef("");
   const passwordRef = useRef("");
   let showError;
@@ -28,6 +31,7 @@ const Login = () => {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     await signInWithEmailAndPassword(email, password);
+    
    
     if (error) {
       console.log(error);
