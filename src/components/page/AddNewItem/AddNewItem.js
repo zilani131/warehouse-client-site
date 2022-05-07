@@ -1,8 +1,12 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
 
 const AddNewItem = () => {
+    const [user]=useAuthState(auth)
   const handleAdding = (e) => {
     e.preventDefault();
+    const email=user?.email;
     const name = e.target.name.value;
     const description = e.target.description.value;
     const img = e.target.img.value;
@@ -18,6 +22,7 @@ const AddNewItem = () => {
       type,
       price,
       quantity,
+      email
     };
     console.log(newItem);
     const url=`http://localhost:5000/home`

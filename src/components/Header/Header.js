@@ -1,13 +1,29 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { Link } from "react-router-dom";
+import auth from "../../firebase.init";
+import { signOut } from "firebase/auth";
 
 const Header = () => {
-    return (
-        <div>
-            <h1>This is header</h1>
-            <Link to="/home">Home</Link>
-        </div>
-    );
+  const [user] = useAuthState(auth);
+  return (
+    <div>
+      <h1>This is header</h1>
+      <h2>{user?.displayName}</h2>
+      <h3>{user?.email}</h3>
+      <Link to="/home">Home</Link>
+      {user ? (
+        <span>
+          <button onClick={() => signOut(auth)}>Sign out</button>
+          <Link to="/manageInventory">Manage item</Link>
+          {/* <Link to ="/additem">Add item</Link> */}
+          <Link to ="/myitem">My item</Link>
+        </span>
+      ) : (
+        <Link to="/login">Log in</Link>
+      )}
+    </div>
+  );
 };
 
 export default Header;
