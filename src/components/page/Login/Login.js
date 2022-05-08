@@ -77,7 +77,7 @@ const Login = () => {
         <button>Registration</button>
       </Link>
       <button onClick={resetPassword}>Forget Password</button>
-      <button onChange={() => signInWithGoogle()}>Login with Google</button>
+      <button onClick={() => signInWithGoogle()}>Login with Google</button>
       
     </div>
   );
