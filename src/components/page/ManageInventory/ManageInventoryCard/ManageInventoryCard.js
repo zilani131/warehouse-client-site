@@ -1,23 +1,26 @@
-import React from 'react';
+import React from "react";
+import { Button } from "react-bootstrap";
 
-const ManageInventoryCard= ({item,handleDlt}) => {
-    //   passing the handleDlt as props to dlt single item 
-        
-        const {name,img,_id,description,supplierName,price,quantity,type}=item;
-        
-        
-        return (
-            <div>
-                <div><img style={{width:"100px"}} src={img} alt="" /></div>
-                <h1>Model:{name}</h1>
-                <h3>{description}</h3>
-                <h4>Manufacturer:{supplierName}</h4>
-                <h4>Price:{price}</h4>
-                <h4>Quantity: {quantity}</h4>
-            <button onClick={()=>handleDlt(_id)}>Delete</button> 
-                <br />
-            </div>
-        );
-    };
+const ManageInventoryCard = ({ item, handleDlt }) => {
+  //   passing the handleDlt as props to dlt single item
+
+  const { name, img, _id, description, supplierName, price, quantity, type } =
+    item;
+
+  return (
+    <tr>
+  
+      <td>{name}</td>
+      <td>{quantity}</td>
+      <td>{price}k</td>
+      <td>{supplierName}</td>
+      <td><img style={{maxWidth:"70px"}} src={img} alt="" /></td>
+      <td>
+        <span className="buttonStyle"><Button variant="outline-dark"  onClick={() => handleDlt(_id)}>Delete</Button>{" "}</span>
+      </td>
+    </tr>
+   
+  );
+};
 
 export default ManageInventoryCard;

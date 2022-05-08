@@ -58,7 +58,7 @@ const Login = () => {
     }
   };
   return (
-    <div>
+    <div style={{paddingTop:"150px"} }>
       <h1>welcome to login</h1>
       <form onSubmit={handleLogIn}>
         <input ref={emailRef} type="email" name="email" id="" placeholder="Email" />
