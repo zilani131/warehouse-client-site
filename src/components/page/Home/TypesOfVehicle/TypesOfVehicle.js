@@ -1,19 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Card, CardGroup, Col, Row } from "react-bootstrap";
 import Vehicle from "./Vehicle/Vehicle";
 
 const TypesOfVehicle = () => {
+//   const HandleVehicles=(type)=>{
+//     const [vehicles, setVehicles] = useState([]);
+//     useEffect(() => {
+//       fetch(`http://localhost:5000/vehicle?type=${type}`)
+//         .then((res) => res.json())
+//         .then((data) => {
+//           setVehicles(data);
+//         });
+//     }, []);
+// }
+
     const Transports=[
-        {name:'Car',img:"https://i.ibb.co/hDJL4rG/Kawasaki-z125.png",description:"best truc",id:1},
-        {name:'Truck',img:"https://i.ibb.co/hDJL4rG/Kawasaki-z125.png",description:"best truc",id:2},
-        {name:'Motorcycle',img:"https://i.ibb.co/hDJL4rG/Kawasaki-z125.png",description:"best truc",id:3},
-        {name:'Bicycle',img:"https://i.ibb.co/hDJL4rG/Kawasaki-z125.png",description:"best truc",id:4},
+        {type:'Car',img:"https://i.ibb.co/2jcMWbR/typeCar.png",description:"The glorious Speed",id:1},
+        {type:'Truck',img:"https://i.ibb.co/ZB9Td0Y/type-Truck.png",description:"High-tech Performance at Low-Tech value",id:2},
+        {type:'Motorcycle',img:"https://i.ibb.co/SxNZdvS/typeBike.png",description:"King of the V-8 Motorcycles.",id:3},
+        {type:'Bicycle',img:"https://i.ibb.co/H2NkN85/type-Cycle.png",description:"Freedom on two wheels",id:4},
     ]
   return (
-    <div className="w-75 mx-auto my-5">
+    <div className="w-full mx-auto my-5 greenCarBody">
+        <h4 className="text-decoration-underline py-1">Different types of Vehicles</h4>
+         <Row className="g-5 row-cols-1 row-cols-md-2 mx-auto w-100 my-3 ">
+     
         {
-           Transports.map(Transport=><Vehicle key={Transport.id} Transport={Transport}></Vehicle>)
+           Transports.map(Transport=><Vehicle key={Transport.id}  Transport={Transport}></Vehicle>)
         }
+     
+      </Row>
+       
       {/* <CardGroup className=" mb-3">
         <Card>
           <Card.Img variant="top" src="https://i.ibb.co/hDJL4rG/Kawasaki-z125.png" />

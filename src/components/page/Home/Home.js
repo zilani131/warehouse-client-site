@@ -1,5 +1,7 @@
 import React from 'react';
 import Banner from './Banner/Banner';
+import GreenCar from './GreenCar/GreenCar';
+
 import InventorySection from './InventorySection/InventorySection';
 import TypesOfVehicle from './TypesOfVehicle/TypesOfVehicle';
 
@@ -9,6 +11,7 @@ const Home = () => {
             <Banner></Banner>
             <TypesOfVehicle></TypesOfVehicle>
             <InventorySection></InventorySection>
+          <GreenCar></GreenCar>
         </div>
     );
 };

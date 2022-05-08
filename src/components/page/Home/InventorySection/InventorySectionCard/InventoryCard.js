@@ -10,7 +10,7 @@ const InventoryCard = (props) => {
         <Col>
         <div className="cardParent">
           
-          <div ><Card.Img style={{maxWidth:"150px"}} variant="top" src={img} /></div>
+          <div ><Card.Img className='py-3' style={{maxWidth:"150px"}} variant="top" src={img} /></div>
           <Card.Body>
             <Card.Title>{name}</Card.Title>
             <Card.Text>{description}</Card.Text>

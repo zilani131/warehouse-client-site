@@ -1,0 +1,6 @@
+.vehicleCardStyle{
+    border-radius: 50px;
+background: #404040;
+box-shadow:  20px 20px 60px #363636,
+             -20px -20px 60px #4a4a4a;
+}

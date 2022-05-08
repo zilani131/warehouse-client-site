@@ -9,11 +9,11 @@ const Banner = () => {
           <img
             style={{maxHeight:"700px"}}
             className="d-block w-100 "
-            src="https://i.ibb.co/mD5YLgx/honda-cb150r.jpg"
+            src="https://i.ibb.co/G95ZxKk/banner1.jpg"
             alt="First slide"
           />
           <Carousel.Caption>
-            <h3>Don’t limit your challenges. Challenge your limits</h3>
+            <h3>The glorious Speed</h3>
            
           </Carousel.Caption>
         </Carousel.Item>
@@ -21,11 +21,11 @@ const Banner = () => {
           <img
             style={{maxHeight:"700px"}}
             className="d-block w-100 h-25"
-            src="https://i.ibb.co/mD5YLgx/honda-cb150r.jpg"
+            src="https://i.ibb.co/0hqz2ZV/banner3.jpg"
             alt="First slide"
           />
           <Carousel.Caption>
-            <h3>The body achieves what the mind believes.</h3>
+            <h3>Wheels like never before</h3>
          
           </Carousel.Caption>
         </Carousel.Item>
@@ -33,11 +33,11 @@ const Banner = () => {
           <img
             style={{maxHeight:"700px"}}
             className="d-block w-100 h-25"
-            src="https://i.ibb.co/mD5YLgx/honda-cb150r.jpg"
+            src="https://i.ibb.co/3v8DYSq/banner2.jpg"
             alt="First slide"
           />
           <Carousel.Caption>
-            <h3>Good things come to those who sweat.</h3>
+            <h3>Affordability at your fingertip.</h3>
        
           </Carousel.Caption>
         </Carousel.Item>

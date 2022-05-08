@@ -19,6 +19,7 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path="/home" element={<Home></Home>}></Route>
+        <Route path="/" element={<Home></Home>}></Route>
         <Route
           path="/inventory/:id"
           element={ <RequiredAuth><DetailsCard></DetailsCard></RequiredAuth> }
