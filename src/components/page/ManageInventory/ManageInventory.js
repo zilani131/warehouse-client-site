@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Table } from "react-bootstrap";
+import { Button, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import InventoryCard from "../Home/InventorySection/InventorySectionCard/InventoryCard";
 import ManageInventoryCard from "./ManageInventoryCard/ManageInventoryCard";
@@ -35,9 +35,10 @@ const ManageInventory = () => {
   return (
     <div style={{ paddingTop: "100px" }}>
       <h1>MangeInventory</h1>
-      <Table striped bordered hover className="w-75 mx-auto">
+    
+      <Table striped bordered hover variant="dark" className="w-75 mx-auto tableStyle shadow-lg  rounded-3">
         <thead>
-          <tr>
+          <tr >
             <th>Model name</th>
             <th>Quantity</th>
             <th>Price</th>
@@ -53,12 +54,15 @@ const ManageInventory = () => {
             item={item}
           ></ManageInventoryCard>
         ))}</tbody>
-        
-        <Link to={"/addNewItem"}>
-          <button>Add new item</button>
-        </Link>
       </Table>
-    </div>
+     <div style={{marginTop:"80px"}}>
+     <Link to={"/addNewItem"}>
+          <span className="buttonStyle"><Button variant="outline-dark">Add new item</Button></span>
+        </Link>
+     </div>
+      </div>
+      
+    
   );
 };
 

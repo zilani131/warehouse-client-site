@@ -1,10 +1,12 @@
 .cardParent {
+  
   border-radius: 20px;
-  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+box-shadow:  20px 20px 60px #c7c7d1,
+             -20px -20px 60px #ffffff;
 }
 .buttonStyle{
   display:inline-block;
-    background: linear-gradient(145deg, #f0f0f0, #cacaca);
-    box-shadow:  20px 20px 60px #bebebe,
-                 -20px -20px 60px #ffffff;
+  background: linear-gradient(145deg, #fafaff, #d3d3dd);
+  box-shadow:  20px 20px 60px #c7c7d1,
+               -20px -20px 60px #ffffff;
 }

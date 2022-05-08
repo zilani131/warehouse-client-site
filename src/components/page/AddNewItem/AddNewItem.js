@@ -1,7 +1,9 @@
+
 import React from "react";
+import { Button, Form } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
-
+import './AddNewItem.css'
 const AddNewItem = () => {
     const [user]=useAuthState(auth)
   const handleAdding = (e) => {
@@ -37,35 +39,40 @@ const AddNewItem = () => {
       .then((data) => {
         console.log("Success:", data);
       });
+      e.target.reset();
   };
   return (
-    <div>
-      <form onSubmit={handleAdding}>
-        <input type="text" name="name" id="" placeholder="product name" />
-        <br />
-        <textarea
+    <div style={{paddingTop:"100px"}}>
+         
+      <form className="formWidth mx-auto border cardParent py-5 px-4 my-5 d-flex flex-column align-items-center  " onSubmit={handleAdding}>
+      <h4 className="mb-3">Add New Item</h4>
+        <input className="inputFieldStyle" type="text" name="name" id="" placeholder="product name" required />
+    
+        <textarea className="inputFieldStyle"
           type="text"
           name="description"
           id=""
           placeholder="Description"
+          required
         />
-        <br />
-        <input type="text" name="img" placeholder="img url" />
-        <br />
-        <input
+        
+        <input className="inputFieldStyle" type="text" name="img" placeholder="img url" required/>
+   
+        <input className="inputFieldStyle"
           type="text"
           name="supplierName"
           id=""
           placeholder="supplierName"
+          required
         />
-        <br />
-        <input type="text" name="type" placeholder="vehicle type" />
-        <br />
-        <input type="number" name="price" id="" placeholder="price" />
-        <br />
-        <input type="number" name="quantity" id="" placeholder="quantity" />
-        <br />
-        <input type="submit" value="add" />
+        
+        <input className="inputFieldStyle" type="text" name="type" placeholder="vehicle type" required/>
+     
+        <input className="inputFieldStyle" type="number" name="price" id="" placeholder="price" required/>
+     
+        <input className="inputFieldStyle"  type="number" name="quantity" id="" placeholder="quantity" required />
+        
+        <span className="buttonStyle my-5"><Button type="submit" className="px-5"  variant="outline-dark">Add</Button></span>
       </form>
     </div>
   );

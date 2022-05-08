@@ -6,7 +6,7 @@ import Header from "./components/Header/Header";
 import AddNewItem from "./components/page/AddNewItem/AddNewItem";
 import DetailsCard from "./components/page/DetailsCard/DetailsCard";
 import Home from "./components/page/Home/Home";
-
+import RequiredAuth from "./components/RequiredAuth/RequiredAuth"
 import Login from "./components/page/Login/Login";
 import ManageInventory from "./components/page/ManageInventory/ManageInventory";
 import MyItem from "./components/page/MyItem/MyItem";
@@ -20,7 +20,7 @@ function App() {
         <Route path="/home" element={<Home></Home>}></Route>
         <Route
           path="/inventory/:id"
-          element={<DetailsCard></DetailsCard>}
+          element={ <RequiredAuth><DetailsCard></DetailsCard></RequiredAuth> }
         ></Route>
         <Route
           path="/manageInventory"

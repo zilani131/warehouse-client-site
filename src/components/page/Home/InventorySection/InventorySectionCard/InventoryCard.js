@@ -8,7 +8,7 @@ const InventoryCard = (props) => {
     const {name,img,_id,description,supplierName,price,quantity,type}=props.item;
     return (
         <Col>
-        <div class="cardParent">
+        <div className="cardParent">
           
           <div ><Card.Img variant="top" src={img} /></div>
           <Card.Body>

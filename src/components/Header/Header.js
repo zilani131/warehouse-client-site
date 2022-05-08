@@ -3,9 +3,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
 import { signOut } from "firebase/auth";
-import Button from 'react-bootstrap/Button'
 import Navbar from 'react-bootstrap/Navbar'
-import { Container, Nav, NavDropdown } from "react-bootstrap";
+import { Container, Nav } from "react-bootstrap";
 
 const Header = () => {
   const [user] = useAuthState(auth);
@@ -23,21 +22,30 @@ const Header = () => {
               </Nav.Link>
               {/*optional rendering  */}
               {user ? (
+                <Nav className="d-flex align-items-center"> <Nav.Link eventKey="link-1" as={Link} to="/myitem">
+                My Items
+              </Nav.Link>
+                 <Nav.Link eventKey="link-1" as={Link} to="/manageInventory">
+                Manage Items
+              </Nav.Link>
+                 <Nav.Link eventKey="link-1" as={Link} to="/addNewItem">
+                Add Items
+              </Nav.Link>
                 <Nav.Link eventKey="link-2" onClick={() => signOut(auth)}>
                   Sign out
+                 
                 </Nav.Link>
+                <span  className="text-white ms-3">{user.displayName}</span>
+                </Nav>
+                
+            
               ) : (
                 <Nav.Link eventKey="link-2" as={Link} to="/login">
                   Log In
                 </Nav.Link>
               )}
 
-              <Nav.Link eventKey="link-4" as={Link} to="/blog">
-                Blogs
-              </Nav.Link>
-              <Nav.Link eventKey="link-5" as={Link} to="/about">
-                About Me
-              </Nav.Link>
+              
             </Nav>
           </Navbar.Collapse>
         </Container>

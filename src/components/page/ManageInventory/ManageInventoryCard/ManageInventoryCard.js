@@ -8,7 +8,7 @@ const ManageInventoryCard = ({ item, handleDlt }) => {
     item;
 
   return (
-    <tr>
+    <tr >
   
       <td>{name}</td>
       <td>{quantity}</td>
@@ -16,7 +16,7 @@ const ManageInventoryCard = ({ item, handleDlt }) => {
       <td>{supplierName}</td>
       <td><img style={{maxWidth:"70px"}} src={img} alt="" /></td>
       <td>
-        <span className="buttonStyle"><Button variant="outline-dark"  onClick={() => handleDlt(_id)}>Delete</Button>{" "}</span>
+        <span className="tableButton"><Button variant="outline-light"  onClick={() => handleDlt(_id)}>Delete</Button>{" "}</span>
       </td>
     </tr>
    

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Button, Card } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 
 const DetailsCard = () => {
@@ -74,24 +75,33 @@ const DetailsCard = () => {
   }
   // console.log(quantity);
   return (
-    <div>
-      <div>
-        <img style={{ width: "100px" }} src={img} alt="" />
-      </div>
-      <h1>
-        Model:{name} id:{_id}
-      </h1>
-      <h3>{description}</h3>
-      <h4>Manufacturer:{supplierName}</h4>
-      <h4>Price:{price}</h4>
-      <h4>Quantity: {quantity}</h4>
-      <button onClick={handleDeliver}>Delivered</button>
-      <form onSubmit={handleRestock} >
-        <input type="number" name="number" id="" required/>
-        <br />
-        <input type="submit" value="restock" />
+    <div className="d-flex align-items-center justify-content-evenly" style={{paddingTop:"100px"}}>
+      <div class="cardParent w-25">
+          
+          <div ><Card.Img variant="top" src={img} /></div>
+          <Card.Body>
+            <Card.Title>{name}</Card.Title>
+            <Card.Text>{description}</Card.Text>
+            <Card.Text>{quantity}</Card.Text>
+            {/* navigate handle */}
+            <span className="buttonStyle h-auto my-4 "><Button className="px-5 " variant="outline-dark" onClick={handleDeliver}>Delivered</Button></span>
+          </Card.Body>
+      
+        </div>
+      
+      <form  className="formWidth w-25  border cardParent py-5 px-4 my-5 d-flex flex-column align-items-center  " onSubmit={handleRestock} >
+        
+        <input  className="inputFieldStyle" type="number" name="number" id="" required/>
+        <div >
+        <span className="buttonStyle h-auto my-4 mx-3 ">
+          <Button type="submit" className="px-5 " variant="outline-dark">
+            Restock
+          </Button>
+        </span>
+        <Link  to={"/manageInventory"}><span className="buttonStyle"><Button variant="outline-dark">Manage inventory</Button></span></Link>
+        </div>
       </form>
-      <Link to={"/manageInventory"}><button>Manage inventory</button></Link>
+      
     </div>
   );
 };

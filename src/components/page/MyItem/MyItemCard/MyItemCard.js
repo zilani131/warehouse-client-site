@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Card, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const MyItemCard = ({product,handleDlt}) => {
 //   passing the handleDlt as props to dlt single item 
@@ -7,16 +9,19 @@ const MyItemCard = ({product,handleDlt}) => {
     
     
     return (
-        <div>
-            <div><img style={{width:"100px"}} src={img} alt="" /></div>
-            <h1>Model:{name}</h1>
-            <h3>{description}</h3>
-            <h4>Manufacturer:{supplierName}</h4>
-            <h4>Price:{price}</h4>
-            <h4>Quantity: {quantity}</h4>
-        <button onClick={()=>handleDlt(_id)}>Delete</button> 
-            <br />
+        <Col>
+        <div class="cardParent">
+          
+          <div ><Card.Img variant="top" src={img} /></div>
+          <Card.Body>
+            <Card.Title>{name}</Card.Title>
+            <Card.Text>{description}</Card.Text>
+            {/* navigate handle */}
+           
+          </Card.Body>
+      
         </div>
+      </Col>
     );
 };
 

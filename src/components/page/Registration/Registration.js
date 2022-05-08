@@ -2,6 +2,7 @@ import React from "react";
 import {  useAuthState, useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import {useNavigate,useLocation, Link} from "react-router-dom"
+import { Button } from "react-bootstrap";
 const Registration = () => {
         // let location = useLocation();
         // let from = location?.state?.from?.pathname || "/";
@@ -48,53 +49,62 @@ const Registration = () => {
           <div>
             <h1>welcome to Signup</h1>
             <div className="border  rounded-3xl border-gray-700 w-fit mx-auto py-3 px-3 bg-neutral-200 drop-shadow-xl">
-            <form onSubmit={handleSubmit} >
+            <form className="formWidth mx-auto border cardParent py-5 px-4 my-5 d-flex flex-column align-items-center  " onSubmit={handleSubmit} >
               <h1 className="text-2xl font-semibold my-3">Sign up</h1>
               <input
-                className="border border-2 border-gray-900 px-2 py-1 my-2 rounded-md"
+                className="inputFieldStyle"
                 type="text"
                 name="name"
                 id=""
                 placeholder="Name"
               />
-              <br />
+        
               <input
-                className="border border-2 border-gray-900 px-2 py-1 my-2 rounded-md"
+                className="inputFieldStyle"
                 type="email"
                 name="email"
                 id=""
                 placeholder="Email"
               />
-              <br />
+        
               <input
-                className="border border-2 border-gray-900 px-2 py-1 my-2 rounded-md"
+                className="inputFieldStyle"
                 type="password"
                 name="password"
                 id=""
                 placeholder="Password"
               />
-              <br />
+      
               <input
-                className="border border-2 border-gray-900 px-2 py-1 my-2 rounded-md"
+                className="inputFieldStyle"
                 type="password"
                 name="confirmPw"
                 id=""
                 placeholder="Confirm password"
               />
-              <br />
-              <input
-                className="border border-2 bg-slate-600 text-white border-gray-900 px-2 py-1 my-2 hover:rounded-md"
-                type="submit"
-                value="Sign Up"
-              />
-              <div className="flex items-center justify-center">
-                <div className="w-5/12 h-1  bg-black border  border-black rounded-xl"></div>
-                <h1 className="text-lg px-2">or</h1>
-                <div className="w-5/12  h-1 bg-black border  border-black rounded-xl"></div>
-              </div>
-              
+          
+              <span className="buttonStyle h-auto my-5 ">
+          <Button type="submit" className="px-5 " variant="outline-dark">
+            sign up
+          </Button>
+        </span>
+        <div className="d-flex align-items-center justify-content-center my-2 w-100">
+          <div style={{ height: "5px" }} className=" lineStyle"></div>
+          <div className="mx-2 fw-bold">Or</div>
+          <div style={{ height: "5px" }} className="lineStyle"></div>
+        </div>
+        <span className="buttonStyle h-auto my-4 ">
+          <Button
+            type="submit"
+            className="px-5 "
+            variant="outline-dark"
+            onClick={() => signInWithGoogle()}
+          >
+            Sign up with Google
+          </Button>{" "}
+        </span>
             </form>
-            <button onClick={()=>signInWithGoogle()} className="border border-2 bg-slate-600 text-white border-gray-900 px-2 py-1 my-2 hover:rounded-md">Sign with Google</button>
+            
             
             </div>
           
