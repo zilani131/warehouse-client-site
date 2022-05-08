@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Col } from 'react-bootstrap';
+import { Button, Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const MyItemCard = ({product,handleDlt}) => {
@@ -17,7 +17,7 @@ const MyItemCard = ({product,handleDlt}) => {
             <Card.Title>{name}</Card.Title>
             <Card.Text>{description}</Card.Text>
             {/* navigate handle */}
-           
+            <span className="tableButton"><Button variant="outline-dark"  onClick={() => handleDlt(_id)}>Delete</Button>{" "}</span>
           </Card.Body>
       
         </div>

@@ -16,7 +16,7 @@ const InventorySection = () => {
   console.log(items);
   return (
     <div>
-      <Row className="g-5 row-cols-1 row-cols-md-2 mx-auto w-50 my-5 ">
+      <Row className="g-5 row-cols-1 row-cols-md-3 mx-auto w-75 my-5 ">
         {items.slice(0,6).map((item) => (
           <InventoryCard key={item._id} item={item}></InventoryCard>
         ))}

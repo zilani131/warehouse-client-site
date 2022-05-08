@@ -45,7 +45,9 @@ const Header = () => {
                 </Nav.Link>
               )}
 
-              
+             <Nav.Link eventKey="link-2" as={Link} to="/blog">
+                 Blog
+                </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

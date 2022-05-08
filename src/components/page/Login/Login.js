@@ -9,7 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "./Login.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
-import { Button } from "react-bootstrap";
+import { Button, Spinner } from "react-bootstrap";
 import "./Login.css";
 const Login = () => {
   const [signInWithGoogle] = useSignInWithGoogle(auth);
@@ -41,7 +41,9 @@ const Login = () => {
       console.log(showError);
     }
     if (loading) {
-      return <p>Loading...</p>;
+      return <Spinner animation="border" role="status">
+    
+    </Spinner>;
     }
 
     if (user) {
@@ -131,6 +133,7 @@ const Login = () => {
           >Registration</Button>
           </Link>
         </div>
+        <ToastContainer/>
       </form>
     </div>
   );

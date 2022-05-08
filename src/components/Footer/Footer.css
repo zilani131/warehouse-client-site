@@ -1,42 +1,51 @@
-
-.footerContainer{
-    display: flex;
-    flex-direction: row;
-    max-width: 100vw;
-}
-.mapContainer{
-    width: 50vw;
+.footerContainer {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  max-width: 100vw;
+  background-color: #ffffff;
 
 }
-.mapImg{
-    
+.mapContainer {
+  width: 50vw;
+}
+.mapImg {
+  width: 100%;
+}
+.rightSideContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+.right-side-form {
+  border-radius: 30px;
+  background: #ffffff;
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+}
+.footerInputField {
+    border: 0px;
+  border-radius: 5px;
+  background: #ffffff;
+  box-shadow: inset 5px 5px 10px #d9d9d9, inset -5px -5px 10px #ffffff;
+}
+@media only screen and (max-width: 720px) {
+  .footerContainer {
+    flex-direction: column;
+    width: 100vw;
+  }
+  .mapContainer {
     width: 100%;
-}
-.rightSideContainer{
+    margin-bottom: 0px;
+  }
+  .mapImg {
+    width: 100vw;
+  }
+  .rightSideContainer {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    width: 100vw;
     background: rgb(238, 237, 237);
-}
-@media only screen and (max-width: 720px)
-{
-    .footerContainer{
-        flex-direction: column;
-        width: 100vw;
-    }
-    .mapContainer{
-        width: 100%;
-       margin-bottom: 0px;
-    }
-    .mapImg{
-        width: 100vw;
-    }
-    .rightSideContainer{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width:100vw;
-        background: rgb(238, 237, 237);
-    }
+  }
 }

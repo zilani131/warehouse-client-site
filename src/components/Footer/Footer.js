@@ -16,26 +16,26 @@ const Footer = () => {
       <div className="rightSideContainer">
         <div className="my-3">
           <div>
-            <h4 className="text-center">GET INTO SHAPE</h4>
+       
             <h2 className="text-center">CONTACT INFORMATION</h2>
           </div>
-          <div className="w-100 d-flex  flex-md-row align-items-sm-center justify-content-sm-center  ">
-            <div className="my-5 mx-2">
-              <div className="text-wrap">
+          <div className="right-side-form w-100 d-flex  flex-md-row align-items-sm-center justify-content-sm-center  ">
+            <div className="ms-5 mx-2">
+              <div className="text-wrap text-start">
                 <MapIcon style={{ width: "30px" }} /> Agrabad, Chittagong
               </div>
-              <div>
+              <div className=" text-start">
                 <PhoneIcon style={{ width: "30px" }} /> 017XXXXXXX
               </div>
-              <div>
+              <div className=" text-start">
                 <MailOpenIcon style={{ width: "30px" }} /> zilani@mail.com
               </div>
             </div>
-            <div className="my-5 mx-2">
+            <form className="my-5 mx-2">
               <span className="d-block my-2">
                 <UserIcon style={{ width: "30px" }} />{" "}
                 <input
-                  className="border-0"
+                  className="footerInputField"
                   placeholder="First Name"
                   type="text"
                   name=""
@@ -45,7 +45,7 @@ const Footer = () => {
               <span className="d-block my-2">
                 <MailOpenIcon style={{ width: "30px" }} />{" "}
                 <input
-                  className="border-0"
+                  className="footerInputField"
                   placeholder="Email"
                   type="text"
                   name=""
@@ -55,14 +55,14 @@ const Footer = () => {
               <span className="d-block my-2">
                 <PhoneIcon style={{ width: "30px" }} />{" "}
                 <input
-                  className="border-0"
+                  className="footerInputField"
                   placeholder="Phone"
                   type="tel"
                   name=""
                   id=""
                 />
               </span>
-            </div>
+            </form>
           </div>
         </div>
       </div>
