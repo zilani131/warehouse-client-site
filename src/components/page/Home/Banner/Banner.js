@@ -21,7 +21,7 @@ const Banner = () => {
           <img
             style={{maxHeight:"700px"}}
             className="d-block w-100 "
-            src="https://i.ibb.co/hYQq5BD/banner3-1-1-80.webp"
+            src="https://i.ibb.co/DbyYbWs/banner3-1-1-80-1-x700.webp"
             alt="First slide"
           />
           <Carousel.Caption>
@@ -32,7 +32,7 @@ const Banner = () => {
         <Carousel.Item interval={1000}>
           <img
             style={{maxHeight:"700px"}}
-            className="d-block w-100 h-25"
+            className="d-block w-100"
             src="https://i.ibb.co/ZJ1cPFL/banner2-3-80.webp"
             alt="First slide"
           />

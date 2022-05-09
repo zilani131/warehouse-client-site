@@ -3,16 +3,7 @@ import { Card, CardGroup, Col, Row } from "react-bootstrap";
 import Vehicle from "./Vehicle/Vehicle";
 
 const TypesOfVehicle = () => {
-//   const HandleVehicles=(type)=>{
-//     const [vehicles, setVehicles] = useState([]);
-//     useEffect(() => {
-//       fetch(`https://warm-plains-66387.herokuapp.com/vehicle?type=${type}`)
-//         .then((res) => res.json())
-//         .then((data) => {
-//           setVehicles(data);
-//         });
-//     }, []);
-// }
+// local data created 
 
     const Transports=[
         {type:'Car',img:"https://i.ibb.co/qWcNSTX/typeCar.webp",description:"The glorious Speed",id:1},

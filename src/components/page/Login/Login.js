@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import {
   useAuthState,
   useSendPasswordResetEmail,
@@ -9,59 +9,114 @@ import { ToastContainer, toast } from "react-toastify";
 import "./Login.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
-import { Button, Spinner } from "react-bootstrap";
+import { Alert, Button, Spinner } from "react-bootstrap";
 import "./Login.css";
+import SpinnerLoad from "../../Shared/SpinnerLoad";
 const Login = () => {
-  const [signInWithGoogle] = useSignInWithGoogle(auth);
-  let navigate = useNavigate();
-  let location = useLocation();
-  const [user] = useAuthState(auth);
+  // const [signInWithGoogle] = useSignInWithGoogle(auth);
+  // let navigate = useNavigate();
+  // let location = useLocation();
+  // const [user] = useAuthState(auth);
 
-  let from = location?.state?.from?.pathname || "/";
-  // sign in with email and password
-  const [signInWithEmailAndPassword, loading, error] =
-    useSignInWithEmailAndPassword(auth);
-  //   password reset email
-  const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
-  // email verification
+  // let from = location?.state?.from?.pathname || "/";
+  // // sign in with email and password
+  // const [signInWithEmailAndPassword, loading, error] =
+  //   useSignInWithEmailAndPassword(auth);
+  // //   password reset email
+  // const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+  // // email verification
 
-  const emailRef = useRef("");
-  const passwordRef = useRef("");
-  let showError;
-  const handleLogIn = async (event) => {
-    event.preventDefault();
-    const email = emailRef.current.value;
-    const password = passwordRef.current.value;
-    await signInWithEmailAndPassword(email, password);
-
-    if (error) {
-      console.log(error);
-      const z = error.message;
-      showError = z.split(":");
-      console.log(showError);
-    }
-    if (loading) {
-      return <Spinner animation="border" role="status">
+  // const emailRef = useRef("");
+  // const passwordRef = useRef("");
+  // let showError;
+  // const handleLogIn = async (event) => {
+  //   event.preventDefault();
+  //   const email = emailRef.current.value;
+  //   const password = passwordRef.current.value;
+  //   await signInWithEmailAndPassword(email, password);
     
-    </Spinner>;
-    }
 
-    if (user) {
-      navigate(from, { replace: true });
-    }
-    event.target.reset();
-  };
-  // reset password email
-  const resetPassword = async () => {
-    if (emailRef.current.value) {
-      await sendPasswordResetEmail(emailRef.current.value);
-      toast("Sent email");
-    } else {
-      toast("Please provide email");
-    }
-  };
+  //   if (user) {
+  //     navigate(from, { replace: true });
+  //   }
+
+  //   if (error) {
+  //     console.log(error);
+  //     const z = error.message;
+  //     showError = z.split(":");
+  //     console.log(showError);
+  //   }
+  //   if (loading) {
+  //     return <Spinner animation="border" role="status">
+    
+  //   </Spinner>;
+  //   }
+
+
+  //   event.target.reset();
+  // };
+  // // reset password email
+  // const resetPassword = async () => {
+  //   if (emailRef.current.value) {
+  //     await sendPasswordResetEmail(emailRef.current.value);
+  //     toast("Sent email");
+  //   } else {
+  //     toast("Please provide email");
+  //   }
+  // };
+  // authentication
+
+// authentication
+
+let navigate = useNavigate();
+let location = useLocation();
+let from = location.state?.from?.pathname || "/";
+const emailRef = useRef("");
+const passwordRef = useRef("");
+const [user1, loading2] = useAuthState(auth);
+const [signInWithEmailAndPassword, user, loading, error] =
+  useSignInWithEmailAndPassword(auth);
+const handleLogIn = (e) => {
+  e.preventDefault();
+  const email = emailRef.current.value;
+  const password = passwordRef.current.value;
+  signInWithEmailAndPassword(email, password);
+};
+//   password reset email
+const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+// sign in with google
+const [signInWithGoogle, loading1,] = useSignInWithGoogle(auth);
+
+ 
+if (user1) {
+  navigate(from, { replace: true });
+}
+let errorMessage;
+if (error) {
+  console.log(error);
+  const x = error.message;
+  const y= x.split(":");
+  const z= y[1].split("/")
+  const a=z[1].split(")")
+  errorMessage=a[0].toUpperCase();
+  console.log(errorMessage);
+}
+// loading spinner
+if (loading || loading1 || loading2) {
+  return <SpinnerLoad></SpinnerLoad>;
+}
+// reset password email
+const resetPassword = async () => {
+  if (emailRef.current.value) {
+    await sendPasswordResetEmail(emailRef.current.value);
+    toast("Sent email to recover password");
+  } else {
+    toast("Please provide email");
+  }
+};
   return (
     <div style={{ paddingTop: "150px" }}>
+ 
       <h1>welcome to login</h1>
 
       <form
@@ -75,7 +130,7 @@ const Login = () => {
           name="email"
           id=""
           placeholder="Email"
-          required
+    
         />
         <br />
         <input
@@ -85,7 +140,7 @@ const Login = () => {
           name="password"
           id=""
           placeholder="Password"
-          required
+    
         />
         <br />
         <div className="d-flex align-items-center mb-1">
@@ -98,16 +153,18 @@ const Login = () => {
             Forget Password
           </Button>
         </div>
+        <ToastContainer />
         {/* conditional rendering to show the error */}
-        {showError && (
-          <div className="text-center text-danger my-3 fw-bold">
-            {showError[1]}
-          </div>
+        {errorMessage && (
+     alert(errorMessage)
         )}
         <span className="buttonStyle h-auto my-4 ">
           <Button type="submit" className="px-5 " variant="outline-dark">
             Log in
           </Button>
+          {/* {errorMessage? alert(errorMessage):''
+      
+          } */}
         </span>
 
         <div className="d-flex align-items-center justify-content-center my-2 w-100">

@@ -9,6 +9,12 @@ background: linear-gradient(145deg, #232323, #1e1e1e);
 box-shadow:  20px 20px 60px #1c1c1c,
              -20px -20px 60px #262626;
 }
+.alertStyle{
+    position: absolute;
+    top: 30px;
+   margin: 0 auto;
+    width: 50%;
+}
 @media only screen and (max-width: 720px){
     .formWidth{
         width:90%;

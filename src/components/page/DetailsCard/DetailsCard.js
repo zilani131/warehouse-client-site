@@ -8,7 +8,7 @@ const DetailsCard = () => {
   const [update,setUpdate]=useState(100)
   const [detail, setDetail] = useState({});
   useEffect(() => {
-    const url = `https://warm-plains-66387.herokuapp.com/inventory/${id}`;
+    const url = `http://localhost:5000/inventory/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((datum) => setDetail(datum));
@@ -18,7 +18,7 @@ const DetailsCard = () => {
   const handleDeliver = () => {
    
    
-    const url = `https://warm-plains-66387.herokuapp.com/inventory/${id}`;
+    const url = `http://localhost:5000/inventory/${id}`;
     // console.log(url);
     // window.location.reload(false);
     let newQuantity = quantity - 1;
@@ -45,7 +45,7 @@ const DetailsCard = () => {
   };
   const handleRestock=e=>{
     e.preventDefault();
-    const url = `https://warm-plains-66387.herokuapp.com/inventory/${id}`;
+    const url = `http://localhost:5000/inventory/${id}`;
 
      if(parseInt(e.target.number.value)<=0){
        

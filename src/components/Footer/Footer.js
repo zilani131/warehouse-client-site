@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css";
 
-import googlemap from "../Utilities/Logo/googlemap.png";
+import googlemap from "../Utilities/Logo/googlemap.webp";
 // hero icon
 import { MapIcon,MailOpenIcon,UserIcon,PhoneIcon } from '@heroicons/react/outline'
 const Footer = () => {

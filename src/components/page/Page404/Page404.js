@@ -1,5 +1,5 @@
 import React from 'react';
-import NotFound from '../../Utilities/NotFoundPage/NotFound.jpg'
+import NotFound from '../../Utilities/NotFoundPage/NotFound.webp'
 const Page404 = () => {
     return (
         <div style={{marginTop:"100px"}}>

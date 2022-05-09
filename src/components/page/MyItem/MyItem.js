@@ -10,19 +10,19 @@ const MyItem = () => {
   const email = user?.email;
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch(`https://warm-plains-66387.herokuapp.com/myitem?email=${email}`)
+    fetch(`http://localhost:5000/myitem?email=${email}`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
       });
-  }, []);
+  }, [email]);
   // passing the handleDlt as props to dlt one item
   const handleDlt = (id) => {
     // sending a warning message to confirm delete
     const proceed = window.confirm("wants to delete item");
     if (proceed) {
       console.log(id);
-      const url = `https://warm-plains-66387.herokuapp.com/home/${id}`;
+      const url = `http://localhost:5000/home/${id}`;
       fetch(url, {
         method: "DELETE",
       })

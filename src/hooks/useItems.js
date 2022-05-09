@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const useItems = () => {
-    const url=`https://warm-plains-66387.herokuapp.com/`
+    const url=`http://localhost:5000/`
     const [items,setItems]=useState([])
     useEffect(()=>{
         fetch(url)

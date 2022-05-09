@@ -1,57 +1,63 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import {  useAuthState, useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import {useNavigate,useLocation, Link} from "react-router-dom"
-import { Button } from "react-bootstrap";
+import {  Button } from "react-bootstrap";
+import { ToastContainer,toast } from "react-toastify";
+import SpinnerLoad from "../../Shared/SpinnerLoad";
 const Registration = () => {
-        // let location = useLocation();
-        // let from = location?.state?.from?.pathname || "/";
-        let navigate = useNavigate();
-        const [user]=useAuthState(auth)
-        const [updateProfile] = useUpdateProfile(auth);
-        const [sendEmailVerification] = useSendEmailVerification(auth);
-          const [
-              createUserWithEmailAndPassword
-          
-            ] = useCreateUserWithEmailAndPassword(auth);
-            const [signInWithGoogle] = useSignInWithGoogle(auth);
-          const handleSubmit= async (event)=>{
-              event.preventDefault();
-              const name=event.target.name.value;
-              const email=event.target.email.value;
-              const pw=event.target.password.value;
-              const cPw=event.target.confirmPw.value;
-              if(pw.length<6)
-              {alert('Please enter at least 6 digit password')
-                  return;
-              }
-              if(pw!==cPw){
-                alert('Password does not match');
-                return;
-              }
-              
-              await createUserWithEmailAndPassword(email,pw)
-              // must be update profile after create user 
-              await updateProfile({displayName:name})
-              await sendEmailVerification()
-              // if(user){
-              //   navigate(from, { replace: true });
-              // }
-              if(user){
-                navigate('/home')
-              }
-            event.target.reset();
+        
+          const navigate = useNavigate();
+          const [error, setError] = useState("");
+          // const [agree, setAgree] = useState(false);
+          const emailRef = useRef("");
+          const passwordRef = useRef("");
+          const confirmPwRef = useRef("");
+          const nameRef = useRef("");
+          //    sign in with google
+          const [signInWithGoogle,loading1] = useSignInWithGoogle(auth);
+          const [updateProfile,loading2] = useUpdateProfile(auth);
+          //   create user and email verification
+          const [createUserWithEmailAndPassword, user, loading] =
+            useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
+
+          if (loading || loading1 || loading2) {
+            return <SpinnerLoad></SpinnerLoad>;
           }
+          const handleRegistration = async (e) => {
+            e.preventDefault();
+            const name = nameRef.current.value;
+            const email = emailRef.current.value;
+            const password = passwordRef.current.value;
+            const confirmPw = confirmPwRef.current.value;
+        
+            if (password.length < 6) {
+              setError("Password must have 6 character or more");
+              return;
+            }
+            if (password !== confirmPw) {
+              setError("Password don't match");
+              return;
+            }
+        
+            await createUserWithEmailAndPassword(email, password);
+            await updateProfile({ displayName: name });
+            // When sign up navigate the page to home page
+          
+            navigate("/home");
+          };
+          console.log(user);
+        
          
-      
          
         return (
           <div>
             <h1>welcome to Signup</h1>
             <div className="border  rounded-3xl border-gray-700 w-fit mx-auto py-3 px-3 bg-neutral-200 drop-shadow-xl">
-            <form className="formWidth mx-auto border cardParent py-5 px-4 my-5 d-flex flex-column align-items-center  " onSubmit={handleSubmit} >
+            <form className="formWidth mx-auto border cardParent py-5 px-4 my-5 d-flex flex-column align-items-center  " onSubmit={handleRegistration} >
               <h1 className="text-2xl font-semibold my-3">Sign up</h1>
               <input
+               ref={nameRef}
                 className="inputFieldStyle"
                 type="text"
                 name="name"
@@ -60,6 +66,7 @@ const Registration = () => {
               />
         
               <input
+              ref={emailRef}
                 className="inputFieldStyle"
                 type="email"
                 name="email"
@@ -68,6 +75,7 @@ const Registration = () => {
               />
         
               <input
+              ref={passwordRef}
                 className="inputFieldStyle"
                 type="password"
                 name="password"
@@ -76,6 +84,7 @@ const Registration = () => {
               />
       
               <input
+              ref={confirmPwRef}
                 className="inputFieldStyle"
                 type="password"
                 name="confirmPw"
@@ -87,6 +96,7 @@ const Registration = () => {
           <Button type="submit" className="px-5 " variant="outline-dark">
             sign up
           </Button>
+          {error && alert(error)}
         </span>
         <div className="d-flex align-items-center justify-content-center my-2 w-100">
           <div style={{ height: "5px" }} className=" lineStyle"></div>
@@ -104,7 +114,7 @@ const Registration = () => {
           </Button>{" "}
         </span>
             </form>
-            
+           <ToastContainer/>
             
             </div>
           
