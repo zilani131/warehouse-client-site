@@ -1,7 +1,29 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+## Website name: [Bangla Motors](https://warehouse-update-host.web.app/)
+## Git hub Client side Link:https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-zilani131
+## Git hub Server side Link:https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-zilani131
+## Available Scripts
+### Website Functionality and Feature
+* #### Home page
+* #### Responsive nav bar
+* #### Login page
+* #### Registration page
+* #### Reset password functionality 
+* #### Authentication method
+* #### Responsive website
+* #### Sign in and Sign up with google Functionality 
+* #### Email and password verification
+* #### Neumorphism style
+* #### used webp format pic for better performance and website optimization
+### Technology
+* #### React router
+* #### React Bootstrap
+* #### Firebase hooks
+* #### Hero icon
+* #### MongoDB 
+* #### node.js
 ## Available Scripts
 
 In the project directory, you can run:

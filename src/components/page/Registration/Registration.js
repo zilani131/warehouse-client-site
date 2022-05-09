@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
-import {  useAuthState, useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import {  useCreateUserWithEmailAndPassword,  useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
-import {useNavigate,useLocation, Link} from "react-router-dom"
+import {useNavigate, Link} from "react-router-dom"
 import {  Button } from "react-bootstrap";
 import { ToastContainer,toast } from "react-toastify";
 import SpinnerLoad from "../../Shared/SpinnerLoad";
