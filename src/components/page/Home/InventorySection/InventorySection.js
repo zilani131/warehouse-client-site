@@ -31,7 +31,7 @@ const InventorySection = () => {
       </Row>
 
       <Link to={"/manageInventory"}>
-        <span className="buttonStyle"><Button variant="outline-dark">Manage Items</Button></span>
+        <span className="buttonStyle"><Button className="text-decoration-underline" variant="outline-dark">Manage Vehicles</Button></span>
       </Link>
     </div>
   );

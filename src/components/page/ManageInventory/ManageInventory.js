@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import InventoryCard from "../Home/InventorySection/InventorySectionCard/InventoryCard";
+
 import ManageInventoryCard from "./ManageInventoryCard/ManageInventoryCard";
 
 const ManageInventory = () => {
@@ -57,7 +57,7 @@ const ManageInventory = () => {
       </Table>
      <div style={{marginTop:"80px"}}>
      <Link to={"/addNewItem"}>
-          <span className="buttonStyle"><Button variant="outline-dark">Add new item</Button></span>
+          <span className="buttonStyle"><Button text-decoration-underline variant="outline-dark">Add new vehicle</Button></span>
         </Link>
      </div>
       </div>

@@ -3,7 +3,7 @@ import {  useCreateUserWithEmailAndPassword,  useSignInWithGoogle, useUpdateProf
 import auth from '../../../firebase.init';
 import {useNavigate, Link} from "react-router-dom"
 import {  Button } from "react-bootstrap";
-import { ToastContainer,toast } from "react-toastify";
+
 import SpinnerLoad from "../../Shared/SpinnerLoad";
 const Registration = () => {
         
@@ -122,7 +122,7 @@ const Registration = () => {
           </Link>
         </div>
             </form>
-           <ToastContainer/>
+
             
             </div>
           
