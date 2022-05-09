@@ -15,10 +15,10 @@ const TypesOfVehicle = () => {
 // }
 
     const Transports=[
-        {type:'Car',img:"https://i.ibb.co/2jcMWbR/typeCar.png",description:"The glorious Speed",id:1},
-        {type:'Truck',img:"https://i.ibb.co/ZB9Td0Y/type-Truck.png",description:"High-tech Performance at Low-Tech value",id:2},
-        {type:'Motorcycle',img:"https://i.ibb.co/SxNZdvS/typeBike.png",description:"King of the V-8 Motorcycles.",id:3},
-        {type:'Bicycle',img:"https://i.ibb.co/H2NkN85/type-Cycle.png",description:"Freedom on two wheels",id:4},
+        {type:'Car',img:"https://i.ibb.co/qWcNSTX/typeCar.webp",description:"The glorious Speed",id:1},
+        {type:'Truck',img:"https://i.ibb.co/mNgFr3y/type-Truck.webp",description:"High-tech Performance at Low-Tech value",id:2},
+        {type:'Motorcycle',img:"https://i.ibb.co/WzyVkWm/typeBike.webp",description:"King of the V-8 Motorcycles.",id:3},
+        {type:'Bicycle',img:"https://i.ibb.co/FgWKf31/type-Cycle.webp",description:"Freedom on two wheels",id:4},
     ]
   return (
     <div className="w-full mx-auto my-5 greenCarBody">
