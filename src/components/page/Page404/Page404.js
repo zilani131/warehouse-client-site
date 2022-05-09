@@ -1,9 +1,9 @@
 import React from 'react';
-import NotFound from '../../Utilities/NotFoundPage/NotFound.webp'
+
 const Page404 = () => {
     return (
         <div style={{marginTop:"100px"}}>
-            <img style={{width:"100vw"}} src={NotFound} alt="" />
+            <img style={{width:"100vw"}} src="https://i.ibb.co/2Y3KMgX/NotFound.webp" alt="" />
         </div>
     );
 };

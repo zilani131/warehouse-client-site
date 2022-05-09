@@ -6,7 +6,7 @@ import SpinnerLoad from "../../../Shared/SpinnerLoad";
 import InventoryCard from "./InventorySectionCard/InventoryCard";
 
 const InventorySection = () => {
-  const url = `http://localhost:5000/home`;
+  const url = `https://warm-plains-66387.herokuapp.com/home`;
   const [load,setLoad]=useState(false)
   const [items, setItems] = useState([]);
   useEffect(() => {

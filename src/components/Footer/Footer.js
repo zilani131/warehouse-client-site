@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css";
 
-import googlemap from "../Utilities/Logo/googlemap.webp";
+
 // hero icon
 import { MapIcon,MailOpenIcon,UserIcon,PhoneIcon } from '@heroicons/react/outline'
 const Footer = () => {
@@ -10,7 +10,7 @@ const Footer = () => {
     <div className="footerContainer">
       {/* google map */}
       <div className="mapContainer">
-        <img className="mapImg" src={googlemap} alt="" />
+        <img className="mapImg" src="https://i.ibb.co/Zf1JvPn/googlemap.webp"alt="" />
       </div>
       {/* footer content */}
       <div className="rightSideContainer">

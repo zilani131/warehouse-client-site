@@ -27,7 +27,7 @@ const AddNewItem = () => {
       email
     };
     console.log(newItem);
-    const url=`http://localhost:5000/home`
+    const url=`https://warm-plains-66387.herokuapp.com/home`
     fetch(url, {
       method: "POST", // or 'PUT'
       headers: {

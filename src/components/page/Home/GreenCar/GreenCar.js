@@ -6,7 +6,7 @@ const GreenCar = () => {
             <h1 className='text-decoration-underline fs-5 fw-bold mt-5 text-white'>Check Our latest Electric Car</h1>
             <div className='greenCarContainer'>
                 <div className='greenCarChild'>
-                    <img style={{width:"90%"}} src="https://i.ibb.co/tP5cGF8/tesla-model-3.png" alt="" />
+                    <img style={{width:"90%"}} src="https://i.ibb.co/Qk5wMKd/tesla-model-3.webp" alt="" />
                    
                 </div>
                 <div  className='greenCarChild'>

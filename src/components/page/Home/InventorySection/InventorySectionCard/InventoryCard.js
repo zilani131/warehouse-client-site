@@ -13,9 +13,12 @@ const InventoryCard = (props) => {
           <div ><Card.Img className='py-3' style={{maxWidth:"150px"}} variant="top" src={img} /></div>
           <Card.Body>
             <Card.Title>{name}</Card.Title>
-            <Card.Text>{description}</Card.Text>
+            <Card.Text className='text-start fw-bold'>{description}</Card.Text>
+            <Card.Text className='text-start fw-bold'>Price:{price}k</Card.Text>
+            <Card.Text className='text-start fw-bold'>Quantity:{quantity}</Card.Text>
+            <Card.Text className='text-start fw-bold'>Manufacturer:{supplierName}</Card.Text>
             {/* navigate handle */}
-            <Link to={`/inventory/${_id}`}><span className='buttonStyle'><Button  variant="outline-dark">
+            <Link to={`/inventory/${_id}`}><span className='buttonStyle my-4'><Button  variant="outline-dark">
              Update
             </Button></span></Link>
           </Card.Body>

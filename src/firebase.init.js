@@ -7,12 +7,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyC4ggjz3sRclRHZIYDkYeIhGolPT1WnHLA",
-  authDomain: "warehouse-updated-management.firebaseapp.com",
-  projectId: "warehouse-updated-management",
-  storageBucket: "warehouse-updated-management.appspot.com",
-  messagingSenderId: "270498437909",
-  appId: "1:270498437909:web:fd1067ee4cbdfd55dc671c"
+  apiKey: "AIzaSyAfYTgbd5y4LaXiNlTRTUU8ofWNC1gQYDE",
+  authDomain: "warehouse-update-host.firebaseapp.com",
+  projectId: "warehouse-update-host",
+  storageBucket: "warehouse-update-host.appspot.com",
+  messagingSenderId: "452941280091",
+  appId: "1:452941280091:web:f34553ff971aec1d80e07e"
 };
 
 // Initialize Firebase

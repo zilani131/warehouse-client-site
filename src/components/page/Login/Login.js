@@ -13,60 +13,7 @@ import { Alert, Button, Spinner } from "react-bootstrap";
 import "./Login.css";
 import SpinnerLoad from "../../Shared/SpinnerLoad";
 const Login = () => {
-  // const [signInWithGoogle] = useSignInWithGoogle(auth);
-  // let navigate = useNavigate();
-  // let location = useLocation();
-  // const [user] = useAuthState(auth);
 
-  // let from = location?.state?.from?.pathname || "/";
-  // // sign in with email and password
-  // const [signInWithEmailAndPassword, loading, error] =
-  //   useSignInWithEmailAndPassword(auth);
-  // //   password reset email
-  // const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
-  // // email verification
-
-  // const emailRef = useRef("");
-  // const passwordRef = useRef("");
-  // let showError;
-  // const handleLogIn = async (event) => {
-  //   event.preventDefault();
-  //   const email = emailRef.current.value;
-  //   const password = passwordRef.current.value;
-  //   await signInWithEmailAndPassword(email, password);
-    
-
-  //   if (user) {
-  //     navigate(from, { replace: true });
-  //   }
-
-  //   if (error) {
-  //     console.log(error);
-  //     const z = error.message;
-  //     showError = z.split(":");
-  //     console.log(showError);
-  //   }
-  //   if (loading) {
-  //     return <Spinner animation="border" role="status">
-    
-  //   </Spinner>;
-  //   }
-
-
-  //   event.target.reset();
-  // };
-  // // reset password email
-  // const resetPassword = async () => {
-  //   if (emailRef.current.value) {
-  //     await sendPasswordResetEmail(emailRef.current.value);
-  //     toast("Sent email");
-  //   } else {
-  //     toast("Please provide email");
-  //   }
-  // };
-  // authentication
-
-// authentication
 
 let navigate = useNavigate();
 let location = useLocation();
@@ -76,11 +23,13 @@ const passwordRef = useRef("");
 const [user1, loading2] = useAuthState(auth);
 const [signInWithEmailAndPassword, user, loading, error] =
   useSignInWithEmailAndPassword(auth);
-const handleLogIn = (e) => {
+const handleLogIn = async (e) => {
   e.preventDefault();
   const email = emailRef.current.value;
   const password = passwordRef.current.value;
-  signInWithEmailAndPassword(email, password);
+ await signInWithEmailAndPassword(email, password);
+
+
 };
 //   password reset email
 const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
@@ -179,7 +128,7 @@ const resetPassword = async () => {
             variant="outline-dark"
             onClick={() => signInWithGoogle()}
           >
-            Login with Google
+           <img style={{width:"30px", height:"30px"}} src="https://i.ibb.co/h9c4Fyb/google.webp" alt="" /> Login with Google
           </Button>{" "}
         </span>
         <div className="d-flex align-items-center mb-1">

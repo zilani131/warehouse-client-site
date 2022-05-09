@@ -2,7 +2,7 @@ import React from 'react';
 
 const Blog = () => {
     return (
-        <div>
+        <div style={{marginTop:"100px",padding:"20px"}}>
             <h4>Welcome to my blog</h4>
             {/* 13.1 Difference between javascript and nodejs
 

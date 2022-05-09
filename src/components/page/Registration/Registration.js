@@ -91,7 +91,7 @@ const Registration = () => {
                 id=""
                 placeholder="Confirm password"
               />
-          
+               
               <span className="buttonStyle h-auto my-5 ">
           <Button type="submit" className="px-5 " variant="outline-dark">
             sign up
@@ -110,9 +110,17 @@ const Registration = () => {
             variant="outline-dark"
             onClick={() => signInWithGoogle()}
           >
-            Sign up with Google
+            <img style={{width:"30px", height:"30px"}} src="https://i.ibb.co/h9c4Fyb/google.webp" alt="" /> Sign up with Google
           </Button>{" "}
         </span>
+        <div className="d-flex align-items-center mb-1">
+          <p className="fs-6 fw-bold m-0">All ready have an account ?</p>
+          <Link to="/login">
+            <Button className="fs-6 fw-bold d-block"
+            variant="link"
+          >Log in</Button>
+          </Link>
+        </div>
             </form>
            <ToastContainer/>
             
