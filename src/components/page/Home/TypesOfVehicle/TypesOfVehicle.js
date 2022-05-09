@@ -6,7 +6,7 @@ const TypesOfVehicle = () => {
 //   const HandleVehicles=(type)=>{
 //     const [vehicles, setVehicles] = useState([]);
 //     useEffect(() => {
-//       fetch(`http://localhost:5000/vehicle?type=${type}`)
+//       fetch(`https://warm-plains-66387.herokuapp.com/vehicle?type=${type}`)
 //         .then((res) => res.json())
 //         .then((data) => {
 //           setVehicles(data);

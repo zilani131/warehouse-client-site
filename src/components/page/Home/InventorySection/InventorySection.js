@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import InventoryCard from "./InventorySectionCard/InventoryCard";
 
 const InventorySection = () => {
-  const url = `http://localhost:5000/home`;
+  const url = `https://warm-plains-66387.herokuapp.com/home`;
   const [items, setItems] = useState([]);
   useEffect(() => {
     fetch(url)

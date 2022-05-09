@@ -5,7 +5,7 @@ import InventoryCard from "../Home/InventorySection/InventorySectionCard/Invento
 import ManageInventoryCard from "./ManageInventoryCard/ManageInventoryCard";
 
 const ManageInventory = () => {
-  const url = `http://localhost:5000/home`;
+  const url = `https://warm-plains-66387.herokuapp.com/home`;
   const [items, setItems] = useState([]);
   useEffect(() => {
     fetch(url)
@@ -18,7 +18,7 @@ const ManageInventory = () => {
     const proceed = window.confirm("wants to delete item");
     if (proceed) {
       console.log(id);
-      const url = `http://localhost:5000/home/${id}`;
+      const url = `https://warm-plains-66387.herokuapp.com/home/${id}`;
       fetch(url, {
         method: "DELETE",
       })
